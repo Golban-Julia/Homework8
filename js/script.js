@@ -5,8 +5,8 @@
 // Если передано меньше 2х аргументов - то должна вывестись ошибка (в консоль) и функция не должна продолжать выполнение
 
 function sumTwoSmallestNumbers(...args) {
-    if (args[1] === undefined) {
-        console.error("...");
+    if (args.length < 2) {
+      console.error("...");
     } else {
       let newArray = (args.sort((a, b) => a - b));
     return newArray[0] + newArray[1];
@@ -23,15 +23,15 @@ console.log(sumTwoSmallestNumbers(1, 3, 2)); // 3
 // // Подсказка 1: функция может возвращать любой тип данных
 // // Подсказка 2: в значении ключа объекта может быть функция (как мы разбирали в примере с функция calc)
 
-// function createCalculator(a) {
+// function createCalculator(defaultValue) {
 
-//   let number = a;
+//   let newValue = defaultValue;
 
 //   return {
-//     sum: (b) => { return number = number + b } ,
-//     sub: (b) => { return number =number - b },
-//     mult: (b) => { return number =number * b },
-//     div: (b) => { return number =number / b},
+//     sum: (value) => { return newValue = newValue + value} ,
+//     sub: (value) => { return newValue = newValue - value },
+//     mult: (value) => { return newValue = newValue * value },
+//     div: (value) => { return newValue = newValue / value},
 //    }
 //   }  
 
